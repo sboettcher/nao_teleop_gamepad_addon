@@ -1,0 +1,18 @@
+<launch>
+
+  <!-- Topic Names -->
+
+
+  <!-- Service Names -->
+  <param name="/nao_tidyup_gamepad_service" value="/nao_tidyup_gamepad_service" />
+
+
+  <!-- Action Names -->
+
+
+  <!-- Other parameters -->
+  <param name="/enableTidyupAddon" value="true" />
+  <param name="/nao_walker/use_foot_gait_config" value="false" />
+
+
+</launch>

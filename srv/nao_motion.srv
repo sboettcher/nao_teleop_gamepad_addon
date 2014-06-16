@@ -1,0 +1,5 @@
+# executes a certain motion on the nao
+
+string motion
+---
+bool success

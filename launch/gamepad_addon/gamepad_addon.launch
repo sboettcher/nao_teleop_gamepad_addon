@@ -1,0 +1,17 @@
+<launch>
+  <!--
+    This pushes the local PYTHONPATH into the launch file, so that the NaoQI API is found.
+    You need to add the Nao's API dir to your PYTHONPATH so that the modules are found.
+  -->
+  <env name="PYTHONPATH" value="$(env PYTHONPATH)" />
+  <arg name="nao_ip" default="$(optenv NAO_IP 127.0.0.1)" />
+  <arg name="nao_port" default="$(optenv NAO_PORT 9559)" />
+
+  <arg name="start_joy" default="true" />
+
+  <include file="$(find nao_teleop)/launch/gamepad_addon/set_params.launch" />
+  <node pkg="nao_teleop" type="nao_tidyup_gamepad_service.py" name="nao_tidyup_gamepad_service" required="true" output="screen" args="--pip=$(arg nao_ip) --pport=$(arg nao_port)" />
+
+  <include if="$(arg start_joy)" file="$(find nao_teleop)/launch/teleop_joy.launch" />
+
+</launch>
