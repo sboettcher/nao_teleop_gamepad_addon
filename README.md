@@ -13,3 +13,5 @@ Install:
 * roscd nao_teleop
 * rosmake
 * roslaunch nao_teleop gamepad_addon.launch
+
+If everything worked, after launching there should be a ros warn output saying "Gamepad Addon enabled!".

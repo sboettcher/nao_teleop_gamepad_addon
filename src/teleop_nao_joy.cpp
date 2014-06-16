@@ -91,7 +91,7 @@ TeleopNaoJoy::TeleopNaoJoy()
   // nao_tidyup_gamepad_addon stuff
   privateNh.param("/enableTidyupAddon", m_enableTidyupAddon, m_enableTidyupAddon);
   if (m_enableTidyupAddon) {
-    ROS_ERROR("Tidyup Addon enabled!");
+    ROS_WARN("Gamepad Addon enabled!");
     m_TidyupAddonClient = nh.serviceClient<nao_teleop::nao_motion>("nao_tidyup_gamepad_service");
   }
 
